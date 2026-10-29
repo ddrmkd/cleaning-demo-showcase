@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#142624">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="description" content="Интерактивный калькулятор стоимости уборки: виды работ, площадь, дополнительные услуги и предварительная смета.">
+  <title>FORMACLEAN — рассчитать уборку онлайн</title>
+  <style>
+:root{--ink:#132b28;--paper:#f5f5ef;--soft:#eaece4;--muted:#697873;--accent:#d8fa81;--white:#fff;--border:#dde3da}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--paper);font:16px/1.55 Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}h1,h2,h3,p{margin:0}button,input{font:inherit}button{cursor:pointer}a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #eeb361;outline-offset:3px}button{color:inherit}.shell{overflow:hidden}.site-header,.hero,.intro-line,.calculator-section,.feature-section,.footer{max-width:1440px;margin:0 auto}
+.site-header{padding:24px 5.4%;display:flex;gap:24px;justify-content:space-between;align-items:center}.wordmark{display:inline-flex;align-items:center;gap:12px;font-weight:950;font-size:21px;letter-spacing:-.065em;white-space:nowrap}.light-weight{font-weight:450}.mark{display:grid;grid-template-columns:repeat(2,7px);grid-template-rows:repeat(2,7px);gap:3px;background:var(--ink);border-radius:10px;padding:10px;transform:rotate(-12deg)}.mark i{display:block;background:var(--accent);border-radius:2px}.mark i:nth-child(2){border-radius:8px 2px 8px 2px}.mark i:nth-child(3){border-radius:2px 8px 2px 8px}.nav{display:flex;gap:38px;font-weight:650;font-size:13px}.nav a:hover{color:#648349}.header-cta{display:inline-flex;align-items:center;gap:24px;border-radius:100px;border:1px solid #b7c8b7;padding:12px 18px;font-size:12px;font-weight:800;white-space:nowrap;transition:.2s}.header-cta:hover{background:#d8efc2}.header-cta span{font-size:18px}
+.hero{margin:0 auto 0;display:grid;grid-template-columns:52% 48%;min-height:615px;padding:0 2.4%}.hero-left{position:relative;background:var(--ink);color:var(--white);padding:77px 7.5% 55px 9.5%;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;border-radius:22px 0 0 22px}.kicker,.overline{font-size:11px;letter-spacing:.15em;font-weight:900}.kicker{display:flex;gap:10px;align-items:center;color:var(--accent)}.dot{display:inline-block;width:7px;height:7px;background:var(--accent);border-radius:50%}.hero h1{font-size:clamp(48px,5.4vw,84px);letter-spacing:-.08em;line-height:1.06;font-weight:830;margin:25px 0 25px;max-width:710px}.hero h1 em{font-style:normal;color:var(--accent)}.hero-left>p{font-size:15px;color:#cfddd8;max-width:435px;line-height:1.8}.hero-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin:35px 0 65px}.btn{border:0;border-radius:100px;padding:17px 22px;display:inline-flex;align-items:center;justify-content:space-between;gap:33px;font-weight:850;font-size:13px;line-height:1.1;transition:.2s;min-height:55px}.btn-lime{background:var(--accent);color:#17251e}.btn-lime:hover{filter:brightness(.92);transform:translateY(-2px)}.btn span{font-size:18px}.quiet-note{color:#bacdc7;font-size:12px;display:flex;gap:9px;align-items:center}.mini-check{border:1px solid #637c74;border-radius:100px;width:23px;height:23px;display:grid;place-items:center;color:var(--accent)}.hero-foot{position:absolute;bottom:46px;left:9.5%;display:flex;align-items:center;gap:17px;color:#a8c1b7;font-size:10px;letter-spacing:.12em;font-weight:750}.hero-foot b{height:3px;width:3px;border-radius:50%;background:#8aada2}.hero-right{position:relative;overflow:hidden;background:radial-gradient(circle at 73% 24%,#bdf5bc 0%,#d9e5cf 27%,#afc6b4 75%);border-radius:0 22px 22px 0;min-height:615px;isolation:isolate}.hero-texture{position:absolute;inset:0;background:repeating-linear-gradient(145deg,transparent,transparent 59px,#ffffff30 60px,#ffffff30 61px);opacity:.5}.orb{position:absolute;border:1px solid #fff8;border-radius:50%}.orb-outer{width:670px;height:670px;left:6%;top:-13%}.orb-inner{width:480px;height:480px;left:22%;top:12%;border-width:2px;box-shadow:0 0 0 40px #ffffff12,0 0 0 120px #ffffff0a}.scene-card{position:absolute;width:54%;height:74%;top:14%;left:24%;background:#f6f7eb;border-radius:170px 170px 18px 18px;display:flex;flex-direction:column;padding:26px 29px 30px;box-shadow:16px 36px 80px #31534440;transform:rotate(-7deg)}.scene-top{display:flex;justify-content:space-between;align-items:center;gap:9px}.scene-chip{font-size:10px;color:#39534b;border:1px solid #cad4c5;padding:7px 9px;border-radius:100px}.scene-indicator{font-size:9px;font-weight:750;color:#37584d;white-space:nowrap}.scene-indicator i{display:inline-block;width:6px;height:6px;background:#6caf57;border-radius:50%;margin-right:4px}.scene-main{display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;flex:1}.scene-icon{display:grid;place-items:center;width:98px;height:98px;border-radius:50%;color:#10382d;font-size:78px;margin:0 0 18px;background:#e0f3c6}.scene-main strong{font-size:clamp(20px,2vw,31px);line-height:1.13;letter-spacing:-.065em}.scene-main>span:last-child{font-size:11px;line-height:1.6;margin-top:17px;color:#799083}.scene-bottom{border-top:1px solid #d8e1d5;padding-top:13px;display:flex;justify-content:space-between;font-size:10px;font-weight:900;letter-spacing:.1em}.scene-bottom span:last-child{font-size:19px}.floating-note{position:absolute;left:5%;bottom:14%;display:flex;align-items:center;gap:12px;border-radius:13px;background:#fff;color:var(--ink);padding:13px 19px;box-shadow:0 12px 36px #314f3534;transform:rotate(4deg)}.floating-note>span{background:#e9f5e7;border-radius:9px;width:40px;height:40px;font-size:27px;display:grid;place-items:center}.floating-note strong{display:block;font-size:12px;white-space:nowrap}.floating-note small{display:block;color:#8a988c;font-size:10px;white-space:nowrap;margin-top:2px}.spark{position:absolute;color:#f9ffed}.spark-one{font-size:70px;top:3%;right:5%}.spark-two{font-size:44px;bottom:4%;right:7%}
+.intro-line{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:44px 6%;border-bottom:1px solid var(--border)}.intro-line p{font-size:11px;font-weight:850;letter-spacing:.16em}.intro-line>span:nth-child(2){color:#7e9185;font-size:14px}.line-arrow{font-size:28px}
+.calculator-section{padding:110px 6% 124px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:48px}.overline{color:#6f8475}.section-head h2,.feature-top h2{font-size:clamp(41px,4.4vw,67px);letter-spacing:-.073em;line-height:1.08;margin-top:17px}.section-head h2 em,.feature-top h2 em{font-style:normal;color:#92ac94}.section-head>p{font-size:14px;line-height:1.8;color:var(--muted);max-width:330px;margin-bottom:7px}.calc-layout{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(305px,1fr);align-items:start;gap:21px}.calc-form{border:1px solid var(--border);background:#fff;border-radius:22px;padding:30px 36px 15px}.form-group{padding:9px 0 36px;margin-bottom:31px;border-bottom:1px solid #e7ebe3}.last-group{border:0;margin-bottom:0}.group-heading{display:flex;gap:16px;align-items:start;margin-bottom:25px}.step{border-radius:50%;display:grid;place-items:center;flex:none;width:37px;height:37px;background:#eef3eb;color:#54805a;font-size:12px;font-weight:950}.group-heading h3{font-size:22px;letter-spacing:-.045em}.group-heading p{color:#9aa99e;font-size:13px;margin-top:3px}.service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}.service{border:1px solid #dfe8df;background:#f9faf6;border-radius:16px;min-height:151px;padding:16px;text-align:left;display:flex;flex-direction:column;transition:.2s;min-width:0}.service:hover{transform:translateY(-3px)}.service[aria-pressed=true]{border-color:#839d71;box-shadow:0 0 0 2px #a7cc8c inset;background:#f5f9f0}.service-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}.service-symbol{background:#ebf3e9;color:#426c55;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-size:24px}.service-indicator{border:1px solid #cbd8cc;border-radius:50%;width:20px;height:20px;display:grid;place-items:center;color:transparent;font-size:11px}.service[aria-pressed=true] .service-indicator{background:var(--ink);color:var(--accent)}.service strong{display:block;line-height:1.2;font-size:13px}.service small{font-size:12px;color:#8b9d91;margin-top:8px}.area-row{display:flex;justify-content:space-between;align-items:center;gap:15px}.area-row label{font-size:13px;font-weight:750}.area-field{display:flex;align-items:center;gap:7px;border:1px solid #dce5da;border-radius:11px;padding:5px 11px;background:#f8faf6}.area-field input{font-size:23px;width:68px;border:0;background:transparent;text-align:right;font-weight:850;color:var(--ink);outline:none}.area-field span{font-size:13px;color:#85998a}.range{display:block;margin:25px 0 13px;width:100%;accent-color:#648e56;cursor:pointer}.range-scale{display:flex;justify-content:space-between;font-size:11px;color:#9aa99e}.extra-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.extra{display:flex;align-items:center;justify-content:space-between;gap:8px;border:1px solid #e3e9e0;padding:16px 17px;border-radius:12px;cursor:pointer;min-width:0;transition:.2s}.extra:hover{background:#f7faf5}.extra strong{display:block;font-size:13px}.extra small{font-size:11px;color:#90a092}.extra input{width:18px;height:18px;accent-color:#476c4b;cursor:pointer}.order-summary{background:#142c27;color:#fff;border-radius:23px;padding:32px 28px;position:sticky;top:20px;min-width:0;overflow:hidden}.summary-top{display:flex;justify-content:space-between;align-items:center}.summary-label{font-size:11px;font-weight:850;letter-spacing:.15em;color:var(--accent)}.summary-spark{font-size:43px;line-height:1;color:var(--accent)}.order-summary h3{font-size:clamp(28px,2.8vw,41px);letter-spacing:-.07em;line-height:1.17;margin:33px 0 42px}.summary-caption{color:#92a9a0;font-size:12px;margin-bottom:9px}.amount{font-size:clamp(36px,4vw,55px);font-weight:880;letter-spacing:-.08em;line-height:1.2;color:var(--accent)}.breakdown{margin:34px 0 23px}.bill-line{display:flex;justify-content:space-between;align-items:start;gap:9px;padding:13px 0;border-bottom:1px solid #35514a;font-size:12px}.bill-line span{color:#b3c5bc}.bill-line strong{white-space:nowrap;text-align:right}.summary-hr{height:16px}.summary-action{width:100%;font-size:13px}.summary-small{display:block;text-align:center;color:#91aa9e;font-size:11px;margin-top:17px;line-height:1.5}.preview{margin-top:22px;background:#e7eddf;border:1px solid #d4dfd0;border-radius:18px;padding:26px;scroll-margin-top:18px}.preview-copy h3{font-size:24px;letter-spacing:-.04em;margin:8px 0 4px}.preview-copy p{max-width:690px;font-size:13px;color:#668072}.preview pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.7 ui-monospace,monospace;background:#fafcf7;padding:20px;border-radius:12px;margin:21px 0}.btn-outline{background:transparent;border:1px solid #91ad9b;gap:17px}.preview #copy-status{font-size:12px;margin-left:15px}[hidden]{display:none!important}
+.feature-section{background:#e5eddf;border-radius:28px;padding:68px 5%;margin-bottom:80px}.feature-top h2{margin-bottom:43px}.feature-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.feature-cards article{background:#f5f9f2;border-radius:19px;padding:25px;min-height:238px}.feature-icon{display:block;color:#526e4e;font-size:38px;margin-bottom:26px}.feature-num{display:block;color:#7b9777;font-size:10px;font-weight:850;letter-spacing:.12em}.feature-cards h3{font-size:22px;letter-spacing:-.04em;margin:6px 0 11px}.feature-cards p{color:#7f9285;font-size:13px;line-height:1.75}.footer{padding:0 6% 34px}.footer-upper{display:flex;justify-content:space-between;align-items:center;gap:18px;border-bottom:1px solid #d6dfd5;padding-bottom:25px}.footer-upper>a{font-size:12px;font-weight:800}.footer-bottom{display:flex;justify-content:space-between;gap:20px;align-items:start;padding-top:20px}.footer-bottom p{font-size:11px;line-height:1.7;color:#66796b;max-width:810px}.footer-bottom span{font-size:10px;font-weight:800;white-space:nowrap;color:#8c9c8f}
+body[data-variant=urban]{--accent:#c8e3fd}body[data-variant=urban] .hero-right{background:radial-gradient(circle at 74% 20%,#b2daea,#afbdc8 70%)}body[data-variant=urban] .hero h1 em{color:#c8e3fd}body[data-variant=urban] .service[aria-pressed=true]{border-color:#7296bc;box-shadow:0 0 0 2px #9eb7d3 inset}body[data-variant=express]{--accent:#ffe2b2}body[data-variant=express] .hero-right{background:radial-gradient(circle at 76% 20%,#f9e9b8,#d8ab98 70%)}body[data-variant=express] .hero h1 em{color:#ffe2b2}body[data-variant=express] .service[aria-pressed=true]{border-color:#cc9d70;box-shadow:0 0 0 2px #ebc597 inset}body[data-variant=premium]{--accent:#e5d4f0}body[data-variant=premium] .hero-right{background:radial-gradient(circle at 78% 23%,#ebd5ec,#b4a5bd 74%)}body[data-variant=premium] .hero h1 em{color:#e5d4f0}body[data-variant=premium] .service[aria-pressed=true]{border-color:#ab91b8;box-shadow:0 0 0 2px #cdb2d2 inset}
+@media(max-width:1000px){.hero{grid-template-columns:1fr 1fr;min-height:515px}.hero-left{padding:52px 7%}.hero-right{min-height:515px}.hero h1{font-size:clamp(46px,5vw,67px)}.scene-card{width:63%;left:17%;height:70%;top:14%}.floating-note{bottom:7%}.calc-layout{grid-template-columns:minmax(0,1.4fr) minmax(285px,1fr)}.calc-form{padding:25px}.service-grid{grid-template-columns:1fr}.service{min-height:76px;display:grid;grid-template-columns:42px 1fr;align-items:center;gap:3px 12px}.service-top{grid-row:1/3;margin:0}.service-indicator{display:none}.service small{margin:0}.extra-grid{grid-template-columns:1fr}.site-header{padding:21px 4%}.nav{gap:20px}}
+@media(max-width:750px){.site-header{padding:16px 5%;gap:10px}.nav{display:none}.wordmark{font-size:19px}.header-cta{padding:10px 12px;gap:8px;font-size:10px}.hero{display:flex;flex-direction:column;padding:0 3%;min-height:0}.hero-left{border-radius:20px 20px 0 0;padding:50px 8% 75px;min-height:480px}.hero h1{font-size:clamp(47px,8.6vw,76px)}.hero-right{border-radius:0 0 20px 20px;min-height:330px}.scene-card{height:78%;width:42%;top:12%;left:30%;border-radius:120px 120px 13px 13px}.scene-main .scene-icon{height:64px;width:64px;font-size:54px;margin-bottom:11px}.scene-main strong{font-size:22px}.scene-main>span:last-child{font-size:10px}.floating-note{left:12%;bottom:8%}.hero-foot{bottom:30px;left:8%}.intro-line{padding:27px 6%}.intro-line>span:nth-child(2){display:none}.calculator-section{padding:75px 5% 80px}.section-head{display:block}.section-head>p{margin-top:18px;max-width:550px}.calc-layout{grid-template-columns:1fr}.order-summary{position:static}.service-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.service{min-height:145px;display:flex}.service-top{margin-bottom:15px}.service-indicator{display:grid}.extra-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.feature-section{margin:0 3% 45px;padding:42px 5%}.feature-cards{grid-template-columns:1fr}.feature-cards article{min-height:0;padding:23px}.feature-icon{margin-bottom:11px}.feature-section h2{font-size:40px}.footer{padding:0 5% 22px}.footer-bottom{flex-direction:column;gap:9px}}
+@media(max-width:460px){.site-header{padding:16px 4%}.wordmark{font-size:16px;gap:8px}.mark{grid-template-columns:repeat(2,6px);grid-template-rows:repeat(2,6px);padding:7px;border-radius:7px}.hero-left{min-height:492px;padding:43px 7% 68px}.hero h1{font-size:clamp(46px,12vw,62px)}.hero-left>p{font-size:14px}.hero-actions{margin:24px 0 66px}.hero-right{min-height:280px}.scene-card{left:25%;width:52%;padding:15px;transform:rotate(-5deg)}.scene-chip,.scene-indicator{font-size:7px}.scene-main>span:last-child{display:none}.scene-main strong{font-size:21px}.scene-icon{width:52px;height:52px;font-size:43px}.floating-note{padding:10px;left:5%;bottom:6%}.floating-note small{font-size:8px}.floating-note>span{width:30px;height:30px}.intro-line{padding:25px 7%}.calculator-section{padding:64px 4% 65px}.section-head h2{font-size:43px}.calc-form{padding:20px 16px 0}.group-heading h3{font-size:19px}.group-heading{gap:10px}.service-grid{grid-template-columns:1fr}.service{min-height:82px;display:grid;grid-template-columns:35px 1fr auto;gap:2px 10px}.service-top{grid-column:1;grid-row:1/3}.service strong{grid-column:2;grid-row:1}.service small{grid-column:2;grid-row:2;margin:0}.service-indicator{display:none}.extra-grid{grid-template-columns:1fr}.order-summary{padding:27px 22px}.feature-top h2{font-size:36px}.footer-bottom p{font-size:10px}}
+
+/* v3 · categories, quantity steppers and detailed extras */
+.service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.service{min-height:131px}
+#area-group[hidden]{display:none!important}
+.extra-toolbar{margin:-2px 0 19px}
+.extra-filters{display:flex;flex-wrap:wrap;gap:7px}
+.extra-filter{padding:10px 14px;background:#f5f7f3;border:1px solid #e2e9de;color:#52695a;border-radius:100px;font-weight:750;font-size:12px;transition:background .18s,color .18s}
+.extra-filter:hover{background:#e7eddf}.extra-filter[aria-pressed=true]{color:#fff;background:#1a3a31;border-color:#1a3a31}
+.extra-toolbar-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:13px 0 0;font-size:12px;color:#778b7d}
+.reset-extras{padding:4px 0;border:0;background:transparent;color:#315f4e;font-size:12px;font-weight:800;text-decoration:underline;text-underline-offset:3px}
+.reset-extras:disabled{color:#a7b8aa;cursor:default;text-decoration:none}
+.extra-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.extra{display:flex;flex-direction:column;align-items:stretch;justify-content:space-between;gap:14px;border:1px solid #e1e8df;padding:16px 16px 14px;border-radius:14px;background:#fcfdfb;min-width:0;transition:background .2s,border-color .2s,box-shadow .2s}
+.extra:hover{background:#f9fcf7}.extra.has-count{border-color:#91aa7b;background:#f2f8e8;box-shadow:0 0 0 1px #d9e7cc inset}
+.extra-header{display:flex;align-items:flex-start;gap:10px}
+.extra-symbol{display:grid;place-items:center;flex:none;width:35px;height:35px;border-radius:11px;background:#e9f2e6;color:#3c694c;font-size:19px}
+.extra-name{min-width:0}.extra-name strong{display:block;color:#21372c;font-size:13px;line-height:1.35}.extra-name small{display:block;font-size:11px;color:#8ba091;margin-top:4px;line-height:1.35}
+.extra-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.extra-price{display:flex;flex-direction:column;line-height:1.4}.extra-price strong{font-size:14px;letter-spacing:-.02em}.extra-price span{font-size:10px;color:#8ba091}
+.qty-stepper{display:flex;align-items:center;border-radius:11px;border:1px solid #d7e1d5;background:#fff;overflow:hidden;min-width:114px;height:38px}
+.qty-stepper button{font-size:20px;line-height:1;flex:none;border:0;background:transparent;color:#2d5144;width:32px;height:100%;font-weight:600}
+.qty-stepper button:disabled{color:#afbbaf;cursor:default}.qty-stepper button:not(:disabled):hover{background:#e8f4e0}
+.qty-stepper input{font-weight:750;font-size:13px;text-align:center;min-width:0;width:48px;flex:1;border:0;background:transparent;color:#243f32;appearance:textfield;-moz-appearance:textfield;outline-offset:-2px;padding:0}
+.qty-stepper input::-webkit-outer-spin-button,.qty-stepper input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.extra-hint{border-top:1px solid #e7ece6;font-size:11px;color:#8da095;line-height:1.6;padding:17px 2px 0}
+.condition-field{font-size:12px;color:#829186;display:flex;flex-direction:column;gap:9px}
+.condition-field select{font:inherit;font-size:14px;font-weight:650;color:#244234;padding:13px;border-radius:11px;border:1px solid #dae4da;background:#fafcf8;width:100%;cursor:pointer}
+.summary-note{font-size:11px;background:#335048;color:#deebdd;border-radius:9px;padding:12px;margin:11px 0}
+.bill-line{align-items:start}.bill-line .qty-detail{font-size:10px;opacity:.82;font-weight:400}
+.empty-extra-state{background:#f5f9f2;padding:20px;color:#69806c;border-radius:12px;grid-column:1/-1;font-size:13px}
+@media(max-width:1000px){.service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.service{display:flex;min-height:128px}.service-top{margin-bottom:7px}}
+@media(max-width:750px){.extra-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:530px){.extra-grid{grid-template-columns:1fr}.service-grid{grid-template-columns:1fr}.extra{gap:12px;padding:16px}.extra-bottom{flex-wrap:nowrap}.extra-filter{padding:9px 11px;font-size:11px}}
+
+/* UI audit #8: reserve separate flow space for the tilted card and its note. */
+.shell{overflow:clip}
+.hero-left,.hero-right,.calc-form,.group-heading>div{min-width:0}
+.hero-actions{margin-bottom:32px}
+.hero-foot{position:static;margin-top:auto;padding-top:16px;flex-wrap:wrap}
+.hero-right{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:36px;padding:48px 28px 32px}
+.scene-card{position:relative;top:auto;left:auto;width:min(88%,330px);height:auto;min-height:390px;flex:none;padding:24px;border-radius:140px 140px 18px 18px;transform:rotate(-7deg)}
+.scene-top{flex-wrap:wrap;justify-content:center}
+.scene-chip{font-size:10px}
+.scene-indicator{font-size:10px}
+.scene-main{margin-top:24px}
+.scene-main .scene-icon{width:80px;height:80px;font-size:64px;margin-bottom:16px}
+.scene-main strong{font-size:28px}
+.scene-main>span:last-child{display:block;font-size:12px;color:#516c5a;margin-top:16px}
+.scene-bottom{margin-top:24px;flex:none;font-size:12px;align-items:center;gap:12px}
+.scene-bottom>span:first-child{white-space:nowrap}
+.floating-note{position:relative;left:auto;bottom:auto;align-self:flex-start;max-width:100%;padding:12px 14px;gap:10px;flex:none;transform:rotate(4deg)}
+.floating-note>span{flex:none}
+.floating-note strong{font-size:13px;white-space:normal}
+.floating-note small{font-size:12px;color:#526b59;white-space:normal}
+.spark-one{top:8px;right:10px;font-size:44px}
+.spark-two{bottom:12px;right:12px;font-size:30px}
+.site-header{flex-wrap:wrap}
+.site-header .wordmark{min-height:44px}
+.nav a,.footer-upper>a{display:inline-flex;align-items:center;min-height:44px}
+.header-cta{min-height:44px;font-size:12px}
+.service strong,.extra-name,.bill-line span{overflow-wrap:anywhere}
+.service-top{width:100%}
+.service strong,.service small{width:100%}
+.service{gap:0}
+.area-row{flex-wrap:wrap}
+.area-field{margin-left:auto}
+.area-field input{min-height:44px}
+.range{min-height:44px;margin:12px 0 0}
+.extra-toolbar-bottom{flex-wrap:wrap}
+.extra-filter,.reset-extras{min-height:44px;font-size:12px}
+.extra-bottom{flex-wrap:wrap}
+.qty-stepper{height:46px;min-width:142px;overflow:visible}
+.qty-stepper button{width:44px;border-radius:10px}
+.qty-stepper input{width:52px;height:44px;cursor:text}
+.qty-stepper :focus-visible{outline-offset:-3px}
+select:focus-visible{outline:3px solid #eeb361;outline-offset:3px}
+.area-field:focus-within{outline:3px solid #b57524;outline-offset:3px}
+.group-heading p,.range-scale,.service small,.extra-name small,.extra-price span,.extra-hint,.condition-field,.extra-toolbar-bottom{color:#526b5b}
+.overline,.feature-num,.feature-cards p{color:#526b50}
+.section-head h2 em,.feature-top h2 em{color:#5e7a60}
+.footer-bottom p,.footer-bottom span,.preview-copy p,.intro-line>span:nth-child(2),.empty-extra-state{color:#526b5b}
+.extra-name small,.extra-price span,.extra-hint,.range-scale,.footer-bottom p,.footer-bottom span,.summary-note{font-size:12px}
+.bill-line{flex-wrap:wrap}
+.bill-line span{flex:1 1 160px}
+.bill-line strong{margin-left:auto}
+.order-summary{position:static}
+.preview #copy-status{display:block;margin:12px 0 0}
+button:disabled{cursor:default}
+.summary-action:disabled{opacity:.65}
+.arrow-icon{width:20px;height:20px;display:inline-block;flex:none;vertical-align:middle}
+.feature-icon .arrow-icon{width:38px;height:38px}
+.area-field span{color:#526b5b}
+.summary-caption,.summary-small{font-size:12px}
+.order-summary.is-sticky{position:sticky}
+@media(max-width:1000px){.service-grid,.extra-grid{grid-template-columns:1fr}.service{min-height:112px}}
+@media(max-width:750px){
+  .hero-left{padding-bottom:36px}
+  .hero-right{min-height:0;padding:40px 24px 30px;gap:32px}
+  .scene-card{width:min(88%,300px);min-height:350px}
+  .scene-main strong{font-size:26px}
+  .service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .service{display:flex;min-height:145px}
+  .service-top{margin-bottom:15px}
+  .extra-grid{grid-template-columns:1fr}
+}
+@media(max-width:530px){
+  .service-grid{grid-template-columns:1fr}
+  .service{min-height:118px}
+}
+@media(max-width:460px){
+  .hero-right{padding:36px 20px 26px}
+  .scene-card{width:min(90%,280px);padding:20px;min-height:340px}
+  .scene-main .scene-icon{width:64px;height:64px;font-size:54px}
+  .scene-main strong{font-size:24px}
+  .hero-left{padding-bottom:30px}
+  .hero-actions{margin-bottom:22px}
+  .hero-foot{font-size:10px;gap:12px}
+  .kicker{font-size:10px;letter-spacing:.1em}
+  .header-cta{white-space:normal;gap:8px;padding:10px 12px}
+  .section-head h2{font-size:clamp(32px,8.7vw,40px)}
+  .footer-bottom p{font-size:12px}
+}
+@media(max-width:350px){
+  .site-header{gap:8px}
+  .header-cta{font-size:11px;max-width:120px}
+  .hero-right{padding-inline:18px}
+  .floating-note{padding:10px;gap:8px}
+  .floating-note>span{width:30px;height:30px}
+  .scene-card{width:92%;padding:18px}
+  .scene-main strong{font-size:23px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .btn-lime:hover,.service:hover{transform:none}
+}
+
+</style>
+</head>
+<body>
+  <div class="shell">
+    <header class="site-header" id="top">
+      <a href="#top" class="wordmark" aria-label="FORMACLEAN — на главную"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>FORMA<span class="light-weight">CLEAN</span></span></a>
+      <nav class="nav" aria-label="Основное меню"><a href="#calculator">Калькулятор</a><a href="#features">Возможности</a></nav>
+      <a class="header-cta" href="#calculator">Узнать стоимость <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-left">
+          <div class="kicker"><span class="dot"></span> УБОРКА · ПРОСТО И ПОНЯТНО</div>
+          <h1 id="hero-title">Чистота.<br>Без лишних<br><em>вопросов.</em></h1>
+          <p>Выберите тип уборки, укажите площадь и дополнительные услуги. Всё остальное калькулятор посчитает за вас.</p>
+          <div class="hero-actions"><a href="#calculator" class="btn btn-lime">Рассчитать уборку <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a><span class="quiet-note"><span class="mini-check" aria-hidden="true">✓</span> Без регистрации</span></div>
+          <div class="hero-foot"><span>КВАРТИРЫ</span><b></b><span>ДОМА</span><b></b><span>ОФИСЫ</span></div>
+        </div>
+        <div class="hero-right" aria-hidden="true">
+          <div class="hero-texture"></div><div class="orb orb-outer"></div><div class="orb orb-inner"></div><div class="spark spark-one">✳</div><div class="spark spark-two">✦</div>
+          <div class="scene-card"><div class="scene-top"><span class="scene-chip">01 / 03</span><span class="scene-indicator"><i></i> Онлайн-калькулятор</span></div><div class="scene-main"><span class="scene-icon">✳</span><strong>Пространство<br>для жизни.</strong><span>Уборка становится проще,<br>когда всё можно посчитать.</span></div><div class="scene-bottom"><span>FORMA CLEAN</span><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></div></div>
+          <div class="floating-note"><span>✳</span><div><strong>Меньше хлопот</strong><small>Больше свободного времени</small></div></div>
+        </div>
+      </section>
+      <section class="intro-line"><p>РАСЧЁТ ОНЛАЙН</p><span>Прозрачно. Удобно. За пару минут.</span><span class="line-arrow">↓</span></section>
+      <section class="calculator-section" id="calculator" aria-labelledby="calc-heading">
+        <div class="section-head"><div><span class="overline">РАССЧИТАЙТЕ СТОИМОСТЬ</span><h2 id="calc-heading">Ваше пространство.<br><em>Ваши условия.</em></h2></div><p>Настройте параметры уборки и узнайте ориентировочную стоимость. Все изменения сразу отражаются в расчёте.</p></div>
+        <div class="calc-layout">
+          <div class="calc-form">
+            <div class="form-group"><div class="group-heading"><span class="step">01</span><div><h3>Что будем убирать?</h3><p>Выберите подходящий вид уборки</p></div></div><div id="services" class="service-grid" role="group" aria-label="Виды уборки"></div></div>
+            <div class="form-group" id="area-group"><div class="group-heading"><span class="step">02</span><div><h3>Какая площадь?</h3><p>Перемещайте ползунок или введите число</p></div></div><div class="area-row"><label for="area">Площадь помещения</label><div class="area-field"><input id="area" type="number" inputmode="numeric" min="15" max="500" step="1" value="55" aria-describedby="area-hint"><span>м²</span></div></div><input id="range" class="range" type="range" min="15" max="500" step="1" value="55" aria-label="Площадь, ползунок"><div id="area-hint" class="range-scale"><span>15 м²</span><span>500 м²</span></div></div>
+            <div class="form-group last-group"><div class="group-heading"><span class="step">03</span><div><h3>Добавим что-то ещё?</h3><p>Выбирайте количество каждой услуги — можно 2, 3 и больше</p></div></div>
+              <div class="extra-toolbar"><div id="extra-filters" class="extra-filters" role="group" aria-label="Категории дополнительных услуг"></div><div class="extra-toolbar-bottom"><span id="selected-counter" aria-live="polite">Ничего не выбрано</span><button id="reset-extras" type="button" class="reset-extras" disabled>Очистить выбор</button></div></div>
+              <div id="extras" class="extra-grid" aria-live="off"></div>
+              <div class="extra-hint">Количество предметов и стоимость каждой позиции отобразятся в смете справа. Некоторые работы могут рассчитываться отдельно.</div>
+            </div>
+            <div class="form-group last-group"><div class="group-heading"><span class="step">04</span><div><h3>Есть особые условия?</h3><p>Это не изменяет сумму автоматически — менеджер уточнит детали</p></div></div>
+              <label class="condition-field" for="condition">Состояние объекта <select id="condition"><option value="Обычное состояние">Обычное состояние</option><option value="Сильные загрязнения">Сильные загрязнения</option><option value="Есть домашние животные">Есть домашние животные</option><option value="Нужна срочная уборка">Нужна срочная уборка</option><option value="Другие особенности">Другие особенности</option></select></label>
+            </div>
+          </div>
+          <aside class="order-summary" aria-labelledby="summary-heading"><div class="summary-top"><span class="summary-label">ВАШ РАСЧЁТ</span><span class="summary-spark">✳</span></div><h3 id="summary-heading">Чистота ближе,<br>чем кажется.</h3><p class="summary-caption">Ориентировочная стоимость</p><div class="amount" id="total" aria-live="polite">—</div><div id="breakdown" class="breakdown"></div><div id="summary-note" class="summary-note" hidden>При нестандартных условиях итог уточняется менеджером.</div><div class="summary-hr"></div><button class="btn btn-lime summary-action" id="generate" type="button">Сформировать заявку <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></button><span class="summary-small">Итоговые условия и стоимость уточняются отдельно.</span></aside>
+        </div>
+        <div id="order-preview" class="preview" hidden tabindex="-1" aria-live="polite"><div class="preview-copy"><span class="overline">ПОДГОТОВЛЕННАЯ ЗАЯВКА</span><h3>Всё готово к обсуждению</h3><p>Можно скопировать данные и отправить их в удобном вам канале. На этом сайте заявка не отправляется автоматически.</p></div><pre id="preview-text"></pre><button id="copy" class="btn btn-outline" type="button">Скопировать заявку <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></button><span id="copy-status" role="status"></span></div>
+      </section>
+      <section id="features" class="feature-section"><div class="feature-top"><span class="overline">ВСЁ ПО ПОЛОЧКАМ</span><h2>Меньше переписки.<br><em>Больше ясности.</em></h2></div><div class="feature-cards"><article><span class="feature-icon"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span><span class="feature-num">01 / ВЫБОР</span><h3>Нужная услуга</h3><p>Вид уборки и площадь собраны в одном понятном интерфейсе.</p></article><article><span class="feature-icon">✳</span><span class="feature-num">02 / РАСЧЁТ</span><h3>Сумма сразу</h3><p>Выбранные опции автоматически добавляются к предварительной стоимости.</p></article><article><span class="feature-icon">▤</span><span class="feature-num">03 / ЗАЯВКА</span><h3>Готовые параметры</h3><p>Основные детали заказа можно скопировать одним нажатием.</p></article></div></section>
+    </main>
+    <footer class="footer"><div class="footer-upper"><div class="wordmark"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>FORMA<span class="light-weight">CLEAN</span></span></div><a href="#top">Наверх ↑</a></div><div class="footer-bottom"><p id="legal-note">Неофициальная демонстрация независимого разработчика. Компания не управляет этой страницей. Все цены и минимальные суммы условные, не являются прайсом или офертой. Заявки не передаются, личные данные не сохраняются.</p><span>2026 © FORMACLEAN</span></div></footer>
+  </div>
+  <script>
+'use strict';
+// Pure quote calculation module, usable from a browser or Node tests.
+// Prices are illustrative and are NOT associated with any named cleaning company.
+(function (root, create) {
+  const api = create();
+  if (typeof module === 'object' && module.exports) module.exports = api;
+  root.CLEANING_PRICING = api;
+})(typeof globalThis !== 'undefined' ? globalThis : this, function () {
+  const clamp = (value, max=20) => {
+    const n = Number(value);
+    if (!Number.isFinite(n)) return 0;
+    return Math.min(max, Math.max(0, Math.trunc(n)));
+  };
+  function calculate(catalog, selection) {
+    const service = catalog.services.find(s=>s.id === selection.service);
+    if (!service) throw new Error('Неизвестный тип уборки');
+    const area = Math.min(500, Math.max(15, Math.round(Number(selection.area) || 15)));
+    const base = service.perSqm * (service.perSqm ? area : 0);
+    const extras = catalog.extras.map(e=>({
+      ...e,
+      count: clamp(selection.quantities?.[e.id], e.max || 20)
+    })).filter(e=>e.count > 0).map(e=>({...e, subtotal:e.price * e.count}));
+    const extrasTotal = extras.reduce((total, item)=>total+item.subtotal,0);
+    const hasSelection = Boolean(service.perSqm) || extras.length > 0;
+    const subtotal = base + extrasTotal;
+    const total = hasSelection ? Math.max(catalog.minimum,subtotal) : 0;
+    return {service, area,base,extras,extrasTotal,subtotal,minimumAdjustment:hasSelection ? total-subtotal:0,total,hasSelection};
+  }
+  function correctUnit(unit,count){
+    const m=count%10, h=count%100;
+    const form=(one,few,many)=>m===1&&h!==11?one:m>=2&&m<=4&&(h<12||h>14)?few:many;
+    if(unit==='створка')return form('створка','створки','створок');
+    if(unit==='комплект')return form('комплект','комплекта','комплектов');
+    return unit;
+  }
+  function summaryLines(quote, condition='Обычное состояние') {
+    const result = [
+      'Услуга: '+quote.service.name,
+      ... (quote.service.perSqm ? ['Площадь: '+quote.area+' м²'] : []),
+      'Дополнительные работы:'
+    ];
+    if (!quote.extras.length) result.push('— нет');
+    quote.extras.forEach(e=>result.push('— '+e.name+': '+e.count+' '+correctUnit(e.unit,e.count)+' × '+e.price+' ₽ = '+e.subtotal+' ₽'));
+    result.push('Условия: '+condition);
+    if (quote.minimumAdjustment) result.push('Доплата до минимального заказа: '+quote.minimumAdjustment+' ₽');
+    result.push('Предварительная сумма: '+quote.total+' ₽');
+    result.push('Итоговые условия и стоимость необходимо согласовать с исполнителем.');
+    return result;
+  }
+  return Object.freeze({clamp,calculate,summaryLines});
+});
+
+</script>
+  <script>
+'use strict';
+// FORMACLEAN showroom; every amount below is invented for illustration.
+const BASE_SERVICES = [
+  {id:'regular',name:'Поддерживающая',perSqm:100,symbol:'✦'},
+  {id:'deep',name:'Генеральная',perSqm:170,symbol:'✳'},
+  {id:'renovation',name:'После ремонта',perSqm:230,symbol:'▤'},
+  {id:'items',name:'Только доп. услуги',perSqm:0,symbol:'◈'}
+];
+const BASE_EXTRAS = [
+  {id:'oven',name:'Духовой шкаф',desc:'Очистка внутри',category:'kitchen',symbol:'◉',unit:'шт.',price:700},
+  {id:'fridge',name:'Холодильник',desc:'Очистка внутри',category:'kitchen',symbol:'❄',unit:'шт.',price:600},
+  {id:'microwave',name:'Микроволновая печь',desc:'Очистка внутри',category:'kitchen',symbol:'▣',unit:'шт.',price:400},
+  {id:'hood',name:'Вытяжка',desc:'Внешняя и внутренняя очистка',category:'kitchen',symbol:'◇',unit:'шт.',price:650},
+  {id:'windows',name:'Мойка окон',desc:'Считаем по створкам',category:'windows',symbol:'▥',unit:'створка',price:450},
+  {id:'balcony-door',name:'Балконная дверь',desc:'Мытьё стёкол и рамы',category:'windows',symbol:'▫',unit:'шт.',price:750},
+  {id:'sofa-2',name:'Диван · 2 места',desc:'Химчистка обивки',category:'furniture',symbol:'▰',unit:'шт.',price:1800},
+  {id:'sofa-3',name:'Диван · 3 места',desc:'Химчистка обивки',category:'furniture',symbol:'▰',unit:'шт.',price:2800},
+  {id:'sofa-corner',name:'Угловой диван',desc:'Химчистка обивки',category:'furniture',symbol:'◩',unit:'шт.',price:3800},
+  {id:'armchair',name:'Кресло',desc:'Химчистка обивки',category:'furniture',symbol:'◫',unit:'шт.',price:750},
+  {id:'chair',name:'Стул',desc:'Химчистка сиденья и спинки',category:'furniture',symbol:'◧',unit:'шт.',price:350},
+  {id:'mattress',name:'Матрас',desc:'Химчистка 1 спального места',category:'furniture',symbol:'▤',unit:'шт.',price:1600},
+  {id:'balcony',name:'Балкон или лоджия',desc:'Отдельная зона уборки',category:'other',symbol:'◰',unit:'шт.',price:1100},
+  {id:'ironing',name:'Глажка',desc:'Каждая единица — 30 минут',category:'other',symbol:'≋',unit:'30 мин',price:550},
+  {id:'linen',name:'Смена белья',desc:'За комплект',category:'other',symbol:'▧',unit:'комплект',price:350}
+];
+const VARIANTS = Object.freeze({
+  calm:{accent:'#d8fa81',minimum:2500,factor:1},
+  urban:{accent:'#c8e3fd',minimum:3000,factor:1.1},
+  express:{accent:'#ffe2b2',minimum:2200,factor:.95},
+  premium:{accent:'#e5d4f0',minimum:3500,factor:1.25}
+});
+const CATEGORIES = [
+  {id:'all',name:'Все услуги'},
+  {id:'kitchen',name:'Техника'},
+  {id:'windows',name:'Окна'},
+  {id:'furniture',name:'Мебель'},
+  {id:'other',name:'Другое'}
+];
+const $=id=>document.getElementById(id);
+const query=new URLSearchParams(location.search);
+const requested=query.get('variant') || window.__PRESENTATION?.variant || 'calm';
+const current=Object.hasOwn(VARIANTS,requested)?requested:'calm';
+const option=VARIANTS[current];
+const catalog={
+  minimum:option.minimum,
+  services:BASE_SERVICES.map(s=>({...s,perSqm:Math.round(s.perSqm*option.factor)})),
+  extras:BASE_EXTRAS.map(e=>({...e,price:Math.round(e.price*option.factor/10)*10,max:e.category==='windows'?99:30}))
+};
+const company=(query.get('for')||window.__PRESENTATION?.company||'').trim().slice(0,70).replace(/[\u0000-\u001f\u007f]/g,'');
+const state={service:'regular',area:55,quantities:{},filter:'all',condition:'Обычное состояние'};
+const {calculate,clamp,summaryLines}=window.CLEANING_PRICING;
+const money=n=>Math.round(n).toLocaleString('ru-RU')+' ₽';
+const unitFor=(unit,count)=>{
+  const mod100=count%100,mod10=count%10;
+  const form=(one,few,many)=>mod10===1&&mod100!==11?one:mod10>=2&&mod10<=4&&(mod100<12||mod100>14)?few:many;
+  if(unit==='створка')return form('створка','створки','створок');
+  if(unit==='комплект')return form('комплект','комплекта','комплектов');
+  if(unit==='позиция')return form('позиция','позиции','позиций');
+  return unit;
+};
+const node=(tag,cl,txt)=>{const e=document.createElement(tag);if(cl)e.className=cl;if(txt!==undefined)e.textContent=txt;return e;};
+const quote=()=>calculate(catalog,state);
+function renderSummary(){
+  const x=quote();
+  $('total').textContent=x.hasSelection?money(x.total):'—';
+  const breakdown=$('breakdown');breakdown.replaceChildren();
+  function line(name,value){const div=node('div','bill-line');div.append(node('span','',name),node('strong','',money(value)));breakdown.append(div);}
+  if(x.service.perSqm)line(x.service.name+' · '+x.area+' м²',x.base);
+  x.extras.forEach(item=>line(item.name+' · '+item.count+' '+unitFor(item.unit,item.count)+' × '+money(item.price),item.subtotal));
+  if(x.minimumAdjustment)line('До минимального заказа',x.minimumAdjustment);
+  if(!x.hasSelection){breakdown.append(node('p','empty-extra-state','Добавьте хотя бы одну услугу, чтобы увидеть стоимость.'));}
+  $('generate').disabled=!x.hasSelection;
+  $('summary-note').hidden=state.condition==='Обычное состояние';
+  $('order-preview').hidden=true;
+  const count=x.extras.reduce((sum,item)=>sum+item.count,0);
+  $('selected-counter').textContent=count?'Выбрано: '+count+' '+unitFor('позиция',count):'Ничего не выбрано';
+  $('reset-extras').disabled=!count;
+}
+function selectService(id){
+  state.service=id;
+  $('area-group').hidden=(id==='items');
+  for(const b of $('services').children)b.setAttribute('aria-pressed',String(b.dataset.id===id));
+  renderSummary();
+}
+function renderServices(){
+  for(const service of catalog.services){
+    const btn=node('button','service');btn.type='button';btn.dataset.id=service.id;
+    btn.setAttribute('aria-pressed',String(service.id===state.service));
+    const row=node('div','service-top');row.append(node('span','service-symbol',service.symbol),node('span','service-indicator','✓'));
+    btn.append(row,node('strong','',service.name),node('small','',service.perSqm?money(service.perSqm)+' / м²':'Без расчёта площади'));
+    btn.addEventListener('click',()=>selectService(service.id));$('services').append(btn);
+  }
+}
+function changeCount(id,count){
+  const extra=catalog.extras.find(x=>x.id===id);
+  if(!extra)return;
+  state.quantities[id]=clamp(count,extra.max);
+  const card=$('extra-'+id);
+  const input=card.querySelector('.qty-stepper input');
+  input.value=String(state.quantities[id]);
+  card.classList.toggle('has-count',state.quantities[id]>0);
+  card.querySelector('[data-action="decrease"]').disabled=state.quantities[id]===0;
+  card.querySelector('[data-action="increase"]').disabled=state.quantities[id]>=extra.max;
+  renderSummary();
+}
+function makeExtra(e){
+  const card=node('div','extra');card.id='extra-'+e.id;
+  const header=node('div','extra-header');header.append(node('span','extra-symbol',e.symbol));
+  const title=node('div','extra-name');title.append(node('strong','',e.name),node('small','',e.desc));header.append(title);
+  const bottom=node('div','extra-bottom');
+  const price=node('div','extra-price');price.append(node('strong','',money(e.price)),node('span','', 'за '+e.unit));
+  const stepper=node('div','qty-stepper');const minus=node('button','', '−'),plus=node('button','', '+');
+  minus.type='button';minus.dataset.action='decrease';plus.type='button';plus.dataset.action='increase';
+  minus.disabled=true;minus.setAttribute('aria-label','Уменьшить: '+e.name);plus.setAttribute('aria-label','Увеличить: '+e.name);
+  const input=node('input');input.type='number';input.min='0';input.max=String(e.max);input.step='1';input.value='0';input.inputMode='numeric';input.setAttribute('aria-label','Количество: '+e.name);
+  minus.addEventListener('click',()=>changeCount(e.id, (state.quantities[e.id]||0)-1));
+  plus.addEventListener('click',()=>changeCount(e.id, (state.quantities[e.id]||0)+1));
+  input.addEventListener('change',()=>changeCount(e.id,input.value));
+  input.addEventListener('blur',()=>changeCount(e.id,input.value));
+  stepper.append(minus,input,plus);bottom.append(price,stepper);card.append(header,bottom);
+  return card;
+}
+function displayExtras(){
+  const active=catalog.extras.filter(e=>state.filter==='all'||e.category===state.filter);
+  const list=$('extras');list.replaceChildren();active.forEach(e=>{
+    const card=makeExtra(e);list.append(card);
+    const qty=clamp(state.quantities[e.id],e.max);if(qty)changeCount(e.id,qty);
+  });
+}
+function renderFilters(){
+  for(const cat of CATEGORIES){
+    const btn=node('button','extra-filter',cat.name);btn.type='button';btn.dataset.filter=cat.id;
+    btn.setAttribute('aria-pressed',String(cat.id===state.filter));
+    btn.addEventListener('click',()=>{
+      state.filter=cat.id;
+      for(const item of $('extra-filters').children)item.setAttribute('aria-pressed',String(item.dataset.filter===cat.id));
+      displayExtras();
+    });
+    $('extra-filters').append(btn);
+  }
+}
+function setArea(raw){
+  const value=Math.round(Number(raw));state.area=Number.isFinite(value)?Math.max(15,Math.min(500,value)):15;
+  $('area').value=String(state.area);$('range').value=String(state.area);renderSummary();
+}
+$('area').addEventListener('input',e=>{
+  const val=e.target.valueAsNumber;
+  if(Number.isInteger(val) && val>=15 && val<=500){state.area=val;$('range').value=String(val);renderSummary();}
+});
+$('area').addEventListener('change',e=>setArea(e.target.value));$('area').addEventListener('blur',e=>setArea(e.target.value));
+$('range').addEventListener('input',e=>setArea(e.target.value));
+$('condition').addEventListener('change',e=>{state.condition=e.target.value;renderSummary();});
+$('reset-extras').addEventListener('click',()=>{state.quantities={};displayExtras();renderSummary();});
+$('generate').addEventListener('click',()=>{
+  setArea($('area').value);
+  const currentQuote=quote();if(!currentQuote.hasSelection)return;
+  $('preview-text').textContent=summaryLines(currentQuote,state.condition).join('\n');
+  $('order-preview').hidden=false;$('copy-status').textContent='';$('order-preview').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});
+  $('order-preview').focus({preventScroll:true});
+});
+$('copy').addEventListener('click',async()=>{
+  const data=$('preview-text').textContent;
+  try{await navigator.clipboard.writeText(data);$('copy-status').textContent='Скопировано.';}
+  catch{$('copy-status').textContent='Выделите и скопируйте текст из блока выше.';}
+});
+document.documentElement.style.setProperty('--accent',option.accent);
+document.body.dataset.variant=current;
+if(company)$('legal-note').textContent='Неофициальный концепт для «'+company+'» от независимого разработчика. Не связан с этой компанией и не является её сайтом. Все цены и минимальные суммы вымышлены и не являются офертой. Заявки не отправляются, данные не сохраняются.';
+// Keep short estimates in view; long estimates must remain fully reachable.
+const summaryPanel=document.querySelector('.order-summary');
+function fitSummary(){
+  summaryPanel.classList.toggle('is-sticky',innerWidth>750&&summaryPanel.getBoundingClientRect().height<=innerHeight-40);
+}
+window.addEventListener('resize',fitSummary);
+new ResizeObserver(fitSummary).observe(summaryPanel);
+renderServices();renderFilters();displayExtras();renderSummary();fitSummary();
+
+</script>
+</body>
+</html>
